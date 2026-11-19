@@ -1,0 +1,16 @@
+# LoopedWAM-E on LIBERO: 10 epochs of elastic self-distillation from the stage-2 LoopedWAM.
+data: data/prepared/libero
+vae: checkpoints/Wan2.1-T2V-1.3B/Wan2.1_VAE.pth
+teacher: runs/libero/stage2/final.pt
+output: runs/libero/elastic
+
+epochs: 10
+global_batch: 128
+microbatch: 32         # windows per GPU per update: 4 GPUs x 32 = global_batch
+seed: 42
+end_prefix: 10         # executed actions per query
+gripper_loss: true
+save_epochs: [10]
+
+checkpoint_every: 1000
+checkpoint_blocks: false

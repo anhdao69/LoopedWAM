@@ -1,0 +1,23 @@
+# LoopedWAM on LIBERO, stage 2 of 2: 10 more epochs from stage 1 with a fresh optimizer, peak learning rate 3e-5,
+# 3% warmup. Each update takes 4 consecutive windows (stride 10 frames) from each of 32 episode streams, and every
+# epoch visits every window once. runs/libero/stage2/final.pt is the released LoopedWAM.
+data: data/prepared/libero
+vae: checkpoints/Wan2.1-T2V-1.3B/Wan2.1_VAE.pth
+init: runs/libero/stage1/final.pt
+resume_optimizer: false
+output: runs/libero/stage2
+
+plan: traversal
+epochs: 10
+streams: 32
+windows_per_stream: 4
+stride: 10
+streams_per_micro: 2   # streams per GPU per forward pass (memory only)
+lr: 3.0e-5
+warmup_fraction: 0.03
+weight_decay: 0.01
+seed: 42
+
+checkpoint_every: 1000
+checkpoint_blocks: false
+compile: false

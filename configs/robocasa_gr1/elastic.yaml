@@ -1,0 +1,17 @@
+# LoopedWAM-E on RoboCasa-GR1: 5 epochs of elastic self-distillation from the stage-2 LoopedWAM (epoch 9).
+# The released LoopedWAM-E is epoch_04.pt.
+data: data/prepared/robocasa_gr1
+vae: checkpoints/Wan2.1-T2V-1.3B/Wan2.1_VAE.pth
+teacher: runs/robocasa_gr1/stage2/epoch_09.pt
+output: runs/robocasa_gr1/elastic
+
+epochs: 5
+global_batch: 128
+microbatch: 32         # windows per GPU per update: 4 GPUs x 32 = global_batch
+seed: 42
+end_prefix: 12         # executed actions per query
+gripper_loss: false
+save_epochs: [4, 5]
+
+checkpoint_every: 1000
+checkpoint_blocks: false

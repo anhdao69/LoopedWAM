@@ -1,0 +1,16 @@
+# LoopedWAM-E on RoboTwin 2.0: 5 epochs of elastic self-distillation from the stage-2 LoopedWAM.
+data: data/prepared/robotwin
+vae: checkpoints/Wan2.1-T2V-1.3B/Wan2.1_VAE.pth
+teacher: runs/robotwin/stage2/final.pt
+output: runs/robotwin/elastic
+
+epochs: 5
+global_batch: 128
+microbatch: 32         # windows per GPU per update: 4 GPUs x 32 = global_batch
+seed: 42
+end_prefix: 24         # executed actions per query
+gripper_loss: false
+save_epochs: [5]
+
+checkpoint_every: 1000
+checkpoint_blocks: false
