@@ -1,7 +1,8 @@
 # LoopedWAM
 
-Official code for **LoopedWAM: Looped World Action Models for Elastic Inference**.
+Official code for [**LoopedWAM: Looped World Action Models for Elastic Inference**](https://arxiv.org/abs/2611.25595).
 
+[![arXiv](https://img.shields.io/badge/arXiv-2611.25595-b31b1b.svg)](https://arxiv.org/abs/2611.25595)
 [![Project Page](https://img.shields.io/badge/Project_Page-LoopedWAM-2ea44f.svg)](https://anhdao69.github.io/LoopedWAM)
 [![Hugging Face Model](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Model-f7c843)](https://huggingface.co/anhdao69/LoopedWAM)
 
@@ -252,6 +253,7 @@ releasing their code, data and assets.
   title   = {LoopedWAM: Looped World Action Models for Elastic Inference},
   author  = {Dao, Anh and Liu, Xinxin and Yu, Hang and
              Chan Santiago, Jeffrey A. and Shang, Yuzhang},
+  journal = {arXiv preprint arXiv:2611.25595},
   year    = {2026}
 }
 ```
